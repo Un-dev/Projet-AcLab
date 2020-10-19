@@ -1,6 +1,6 @@
  # AcLab Advancement
 
-## - 19 Octobre -
+## - October 19th -
 
 ```
     Today was dedicated to basic choices around the project, subject, tools,
@@ -11,5 +11,5 @@
     
     Concerning the subject we decided to make a mobile app that helps you
     and your friends (if you have some) to choose the movie of your evening/party.
-    We've discussed about wether we want to do it using react-native or in flutter
+    We've discussed about wether we want to do it using react-native or in Flutter and decided it will be Flutter
 ```
