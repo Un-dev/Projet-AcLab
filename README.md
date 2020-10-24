@@ -1,7 +1,7 @@
 # Projet-AcLab
 
 
-  The concept of the app would be to offer a solution to people who want to watch movies together but cant get on a agree on the movie.
+  The concept of the app would be to offer a solution to people who want to watch movies together but cant agree on the movie.
   Similarly to Tinder, people would swipe through a list of films and when a match would occur they'd be notified
 
 
