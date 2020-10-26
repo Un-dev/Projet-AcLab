@@ -9,7 +9,7 @@
 
 ## Made with
 
-* [Express](https://expressjs.com/en/) for the backend API
+* [Spring-Boot](https://spring.io/projects/spring-boot) for the backend API
 * [Flutter](https://flutter.dev/) for the frontend
 
 ## Running the app
