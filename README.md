@@ -10,7 +10,7 @@
 ## Made with
 
 * [Express](https://expressjs.com/en/) for the backend API
-* [React.JS](https://en.reactjs.org/) for the frontend
+* [Flutter](https://flutter.dev/) for the frontend
 
 ## Running the app
 
@@ -20,6 +20,9 @@
 
 * [@Galimede](https://github.com/Galimede) (Mathieu Degand) 
 * [@Un-dev](https://github.com/Un-dev) (François Lannoy)
+* [@Verzelea](https://github.com/Verzelea) (Arthur Verzele)
+* [@Skiadram](https://github.com/Skiadram) (Neel Coffin)
+* [@sipe-daniel](https://github.com/sipe-daniel) (Daniel Sipe)
 
 ### Journal
 
