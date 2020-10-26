@@ -23,6 +23,7 @@
 * [@Verzelea](https://github.com/Verzelea) (Arthur Verzele)
 * [@Skiadram](https://github.com/Skiadram) (Neel Coffin)
 * [@sipe-daniel](https://github.com/sipe-daniel) (Daniel Sipe)
+* [@KheliaNibaruta](https://github.com/KheliaNibaruta) (Khelia Niburata)
 
 ### Journal
 
