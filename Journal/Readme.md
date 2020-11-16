@@ -20,3 +20,16 @@
     We started to design a prototype and fixed some environment issues linked to flutter/android-studio installation. 
     We expanded the readme to explain our objectives and goals a little bit more precisely.
 ```
+
+## - November 9th -
+
+```
+    Extended our Readme to specify choices of technologies
+```
+
+## - November 16th -
+
+```
+    
+```
+
