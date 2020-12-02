@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class Home extends StatefulWidget {
+  Home({Key key, this.title}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -15,10 +15,10 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _HomeState createState() => _HomeState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _HomeState extends State<Home> {
   int _counter = 0;
 
   void _incrementCounter() {
@@ -37,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
+        // Here we take the value from the Home object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
@@ -75,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: Icon(Icons.add),
-      ), 
+      ),
     );
   }
 }

@@ -1,22 +1,6 @@
 import 'package:flutter/material.dart';
-import 'Screens/Home/home.dart';
-import 'Screens/About/about.dart';
+import 'Screens/app.dart';
 
 void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: MyHomePage(title: 'Home'),
-      about: About(title: 'About'),
-    );
-  }
+  runApp(Netlab());
 }
