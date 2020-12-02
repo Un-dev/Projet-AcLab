@@ -1,31 +1,15 @@
 import 'package:flutter/material.dart';
 import 'Home/home.dart';
+import 'About/about.dart';
 
-class Netlab extends StatefulWidget {
-  @override
-  _AppState createState() => _AppState();
-}
-
-class _AppState extends State<Netlab> {
-  @override
-  void initState() {
-    super.initState();
-
-    setState(() {});
-  }
-
-  bool onPopPage(Route<dynamic> route, dynamic result) {
-    return true;
-  }
-
+class Netlab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Netlab',
-        theme: ThemeData.light(),
-        home: Navigator(
-          onPopPage: this.onPopPage,
-          pages: [MaterialPage(key: ValueKey('home'), child: Home())],
-        ));
+      title: 'Flutter Demo',
+      theme: ThemeData(primarySwatch: Colors.blue),
+      initialRoute: '/',
+      onGenerateRoute: (settings) {},
+    );
   }
 }

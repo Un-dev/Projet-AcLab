@@ -11,6 +11,21 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => Home());
       case '/about':
         return MaterialPageRoute(builder: (_) => About());
+      default:
+        return _errorRoute();
     }
+  }
+
+  static Route<dynamic> _errorRoute() {
+    return MaterialPageRoute(builder: (_) {
+      return Scaffold(
+        appBar: AppBar(
+          title: Text('Error'),
+        ),
+        body: Center(
+          child: Text('ERROR'),
+        ),
+      );
+    });
   }
 }
