@@ -14,7 +14,19 @@ class Home extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).pushNamed('/about');
                 },
-              )
+              ),
+              RaisedButton(
+                child: Text('Create a room'),
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/createroom');
+                },
+              ),
+              RaisedButton(
+                child: Text('Join a room'),
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/joinroom');
+                },
+              ),
             ],
           ),
         ));
