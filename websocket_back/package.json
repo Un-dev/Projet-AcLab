@@ -1,0 +1,39 @@
+{
+  "name": "websocket_back",
+  "version": "1.0.0",
+  "description": "Websocket server for a mobile app ",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint src",
+    "lint:fix": "eslint --fix src",
+    "dev": "npm run lint && nodemon --exec babel-node src/index.js ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Un-dev/Netlab.git"
+  },
+  "author": "Les potITs blagueurs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Un-dev/Netlab/issues"
+  },
+  "homepage": "https://github.com/Un-dev/Netlab#readme",
+  "dependencies": {
+    "socket.io": "^2.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/node": "^7.12.6",
+    "@babel/preset-env": "^7.12.7",
+    "babel-cli": "^7.0.0-0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.14.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^5.0.0",
+    "nodemon": "^2.0.6"
+  }
+}
