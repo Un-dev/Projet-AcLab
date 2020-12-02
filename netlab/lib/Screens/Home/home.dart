@@ -10,12 +10,6 @@ class Home extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               RaisedButton(
-                child: Text('About'),
-                onPressed: () {
-                  Navigator.of(context).pushNamed('/about');
-                },
-              ),
-              RaisedButton(
                 child: Text('Create a room'),
                 onPressed: () {
                   Navigator.of(context).pushNamed('/createroom');
@@ -25,6 +19,12 @@ class Home extends StatelessWidget {
                 child: Text('Join a room'),
                 onPressed: () {
                   Navigator.of(context).pushNamed('/joinroom');
+                },
+              ),
+              RaisedButton(
+                child: Text('About'),
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/about');
                 },
               ),
             ],
