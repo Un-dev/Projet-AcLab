@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:netlab/theme.dart';
+import 'package:netlab/utils/customButton.dart';
 
 class Home extends StatelessWidget {
+  final ThemeData theme = globalTheme();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,8 +25,8 @@ class Home extends StatelessWidget {
                   Navigator.of(context).pushNamed('/joinroom');
                 },
               ),
-              RaisedButton(
-                child: Text('About'),
+              CustomButton(
+                label: 'About',
                 onPressed: () {
                   Navigator.of(context).pushNamed('/about');
                 },
