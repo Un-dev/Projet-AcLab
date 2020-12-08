@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 
 ThemeData globalTheme() {
   return ThemeData(
-    backgroundColor: Color(0x3D455AFF),
-    textTheme: TextTheme(),
+    scaffoldBackgroundColor: Color.fromRGBO(61, 69, 90, 1.0),
+    textTheme: Typography(platform: TargetPlatform.android).white,
   );
 }
 
 ThemeData buttonTheme() {
   return ThemeData(
-    backgroundColor: Color(0x5B6581FF),
+    backgroundColor: Color.fromRGBO(91, 101, 129, 1.0),
+    width: 100,
   );
 }
 

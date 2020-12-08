@@ -13,14 +13,15 @@ class Home extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              RaisedButton(
-                child: Text('Create a room'),
+              Text('coucou'),
+              CustomButton(
+                label: 'Create a room',
                 onPressed: () {
                   Navigator.of(context).pushNamed('/createroom');
                 },
               ),
-              RaisedButton(
-                child: Text('Join a room'),
+              CustomButton(
+                label: 'Join a room',
                 onPressed: () {
                   Navigator.of(context).pushNamed('/joinroom');
                 },

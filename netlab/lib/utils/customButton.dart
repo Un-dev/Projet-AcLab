@@ -10,12 +10,12 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RawMaterialButton(
+    return MaterialButton(
       child: Center(
         child: Text(label),
       ),
       onPressed: onPressed,
-      fillColor: theme.backgroundColor,
+      color: theme.backgroundColor,
     );
   }
 }
