@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:netlab/Screens/route_generator.dart';
-import 'Home/home.dart';
-import 'About/about.dart';
 
 class Netlab extends StatelessWidget {
   @override
