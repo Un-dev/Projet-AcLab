@@ -13,7 +13,10 @@ class Home extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              Text('coucou'),
+              Text(
+                'Netlab',
+                style: titleTheme(),
+              ),
               CustomButton(
                 label: 'Create a room',
                 onPressed: () {

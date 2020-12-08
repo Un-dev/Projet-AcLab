@@ -16,6 +16,7 @@ class CustomButton extends StatelessWidget {
       ),
       onPressed: onPressed,
       color: theme.backgroundColor,
+      textColor: Color.fromRGBO(255, 255, 255, 1.0),
     );
   }
 }

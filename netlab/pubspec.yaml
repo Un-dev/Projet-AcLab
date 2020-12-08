@@ -80,6 +80,9 @@ flutter:
         weight: 700
       - asset: fonts/Nunito/Nunito-Light.ttf
         weight: 300
+  - family: Bebasneue
+    fonts:
+      - asset: fonts/BebasNeue/BebasNeue.otf
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
