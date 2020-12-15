@@ -9,6 +9,7 @@ void main() {
           .build());
   socket.onConnect((_) {
     print(socket.id);
+    socket.emit('create_room', {'username': 'toto'});
   });
   socket.on('event', (data) => print(data));
   socket.onDisconnect((_) => print('disconnect'));
