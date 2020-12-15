@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_color/flutter_color.dart';
 
 
-Widget textfieldWidget(textStyle, codeController, mKeyboardtype) {
+Widget textfieldWidget(textStyle, codeController, mKeyboardtype,placeholder) {
   return Column(
     children: [
       TextField(
         controller: codeController,
         decoration: InputDecoration(
-            hintText: 'Enter room code',
+            hintText: placeholder,
             labelStyle: textStyle,
             filled: true,
             fillColor: Color.fromRGBO(91,101,129,1),
