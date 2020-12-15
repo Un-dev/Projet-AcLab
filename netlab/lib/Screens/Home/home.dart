@@ -13,18 +13,14 @@ class Home extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              Text(
-                'Netlab',
-                style: titleTheme(),
-              ),
-              CustomButton(
-                label: 'Create a room',
+              RaisedButton(
+                child: Text('Create a room'),
                 onPressed: () {
                   Navigator.of(context).pushNamed('/createroom');
                 },
               ),
-              CustomButton(
-                label: 'Join a room',
+              RaisedButton(
+                child: Text('Join a room'),
                 onPressed: () {
                   Navigator.of(context).pushNamed('/joinroom');
                 },
