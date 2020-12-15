@@ -16,7 +16,7 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => About());
       case '/joinroom':
         return MaterialPageRoute(builder: (_) => JoinRoom());
-      case 'createroom':
+      case '/createroom':
         return MaterialPageRoute(builder: (_) => CreateRoom());
       case '/room':
         return MaterialPageRoute(builder: (_) => Room());
