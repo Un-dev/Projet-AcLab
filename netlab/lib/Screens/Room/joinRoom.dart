@@ -22,7 +22,7 @@ class _JoinRoomFormState extends State<JoinRoomForm> {
     TextStyle textStyle = Theme.of(context).textTheme.title;
     return Scaffold(
       body: Container(
-        color: HexColor('#3D455A'),
+        color: Color.fromRGBO(61, 69, 90, 1.0),
         padding: EdgeInsets.all(15.0),
         child: Column(
           children: <Widget>[
@@ -32,7 +32,7 @@ class _JoinRoomFormState extends State<JoinRoomForm> {
                   hintText: 'Enter room code',
                   labelStyle: textStyle,
                   filled: true,
-                  fillColor: HexColor('#5B6581'),
+                  fillColor: Color.fromRGBO(91, 101, 129, 1.0),
                   focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.white),
                     borderRadius: BorderRadius.circular(25.7),
@@ -44,7 +44,7 @@ class _JoinRoomFormState extends State<JoinRoomForm> {
               keyboardType: TextInputType.number,
             ),
             RaisedButton(
-                color: HexColor('#E50A14'),
+                color: Color.fromRGBO(229, 10, 20, 1.0),
                 textColor: Theme.of(context).primaryColorLight,
                 onPressed: () {
                   setState(() {
