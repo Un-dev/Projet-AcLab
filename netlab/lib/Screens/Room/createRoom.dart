@@ -10,7 +10,7 @@ class CreateRoom extends StatelessWidget {
       body: Center(
         child: CustomButton(
           label: 'Create',
-          onPressed: createRoom(context),
+          onPressed: () => createRoom(context),
         ),
       ),
     );
@@ -19,7 +19,7 @@ class CreateRoom extends StatelessWidget {
 
 createRoom(BuildContext context) {
   final channel = IOWebSocketChannel.connect("ws://localhost:8181");
-
-  Navigator.of(context).pushNamed('/room');
+  int idRoom = 0;
+  Navigator.of(context).pushNamed('/room', arguments: {idRoom});
   return idRoom;
 }

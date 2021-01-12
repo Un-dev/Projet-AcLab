@@ -5,12 +5,11 @@ class Room extends StatefulWidget {
   Room({this.idRoom});
 
   @override
-  State<StatefulWidget> createState() {}
+  State<StatefulWidget> createState() => _RoomState();
 }
 
-class RoomState extends State<Room> {
-  RoomState();
-
+class _RoomState extends State<Room> {
+  _RoomState();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +17,7 @@ class RoomState extends State<Room> {
       body: Center(
         child: Column(
           children: [
-            Text('You are in the room  n° ...'),
+            Text('You are in the room  n° ' + widget.idRoom.toString()),
           ],
         ),
       ),
