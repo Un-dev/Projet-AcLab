@@ -25,6 +25,12 @@ class Home extends StatelessWidget {
                   Navigator.of(context).pushNamed('/joinroom');
                 },
               ),
+              RaisedButton(
+                child: Text('Vote'),
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/poll');
+                },
+              ),
               CustomButton(
                 label: 'About',
                 onPressed: () {

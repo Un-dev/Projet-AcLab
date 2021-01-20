@@ -4,6 +4,7 @@ import 'package:netlab/Screens/Home/home.dart';
 import 'package:netlab/Screens/Room/Room.dart';
 import 'package:netlab/Screens/Room/createRoom.dart';
 import 'package:netlab/Screens/Room/joinRoom.dart';
+import 'package:netlab/Screens/Room/poll.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -16,8 +17,10 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => About());
       case '/joinroom':
         return MaterialPageRoute(builder: (_) => JoinRoom());
-      case 'createroom':
+      case '/createroom':
         return MaterialPageRoute(builder: (_) => CreateRoom());
+      case '/poll':
+        return MaterialPageRoute(builder: (_) => Poll());
       case '/room':
         return MaterialPageRoute(builder: (_) => Room());
       default:

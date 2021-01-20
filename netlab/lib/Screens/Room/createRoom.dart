@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:netlab/utils/customButton.dart';
-import 'package:web_socket_channel/io.dart';
+//import 'package:web_socket_channel/io.dart';
 
 class CreateRoom extends StatelessWidget {
   @override
@@ -10,16 +10,16 @@ class CreateRoom extends StatelessWidget {
       body: Center(
         child: CustomButton(
           label: 'Create',
-          onPressed: createRoom(context),
+          //onPressed: createRoom(context),
         ),
       ),
     );
   }
 }
 
-createRoom(BuildContext context) {
+/*createRoom(BuildContext context) {
   final channel = IOWebSocketChannel.connect("ws://localhost:8181");
 
   Navigator.of(context).pushNamed('/room');
   return idRoom;
-}
+}*/

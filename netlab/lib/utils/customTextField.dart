@@ -6,9 +6,11 @@ Widget textfieldWidget(textStyle, codeController, mKeyboardtype,placeholder) {
   return Column(
     children: [
       TextField(
+        //Style: Colors.blue,
         controller: codeController,
         decoration: InputDecoration(
             hintText: placeholder,
+            hintStyle: TextStyle(color: Colors.white),
             labelStyle: textStyle,
             filled: true,
             fillColor: Color.fromRGBO(91,101,129,1),
@@ -17,7 +19,7 @@ Widget textfieldWidget(textStyle, codeController, mKeyboardtype,placeholder) {
               borderRadius: BorderRadius.circular(25.7),
             ),
             border: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.white),
+              //borderSide: BorderSide(color: Colors.white),
               borderRadius: BorderRadius.circular(10.0),
             )
         ),
