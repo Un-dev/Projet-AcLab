@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class Room extends StatefulWidget {
-  final String tototata = 'tototata';
   final int idRoom;
   Room({this.idRoom});
 
