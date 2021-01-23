@@ -1,5 +1,3 @@
-/* eslint-disable no-trailing-spaces */
-/* eslint-disable line-comment-position */
 export default class Room {
 
   constructor (options) {
@@ -7,7 +5,8 @@ export default class Room {
     this.socket = options.socket;
     this.roomId = options.roomId;
     this.username = options.username;
-    this.action = options.action; // join|create
+    // join | create
+    this.action = options.action;
     this.store = this.io.adapter;
   }
 
@@ -76,6 +75,6 @@ export default class Room {
 
   launchGame () {
     this._setAllReady();
-    this.io.to(this.roomId).emit('launch_game', '[SUCESS] Game has been launched');  
+    this.io.to(this.roomId).emit('launch_game', '[SUCESS] Game has been launched');
   }
 }
