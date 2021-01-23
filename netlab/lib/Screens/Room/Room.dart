@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Room extends StatefulWidget {
+  final String tototata = 'tototata';
   final int idRoom;
   Room({this.idRoom});
 
@@ -17,7 +18,7 @@ class _RoomState extends State<Room> {
       body: Center(
         child: Column(
           children: [
-            Text('You are in the room  n° ' + widget.idRoom.toString()),
+            Text(widget.idRoom.toString()),
           ],
         ),
       ),
