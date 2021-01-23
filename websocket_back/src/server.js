@@ -8,13 +8,20 @@ let roomId = 1000;
 function initServer () {
   io.on('connection', (socket) => {
     console.log(`Connection established with ${socket.id} id`);
-
+    let room;
     socket.on('create_room', ({ username }) => {
       const roomOptions = { io, socket, roomId, username, action: 'create' };
-      const room = new Room(roomOptions);
+      room = new Room(roomOptions);
       room.init();
-      room.showMembers();
       roomId++;
+    });
+
+    socket.on('show_members', () => {
+      room.showMembers();
+    });
+
+    socket.on('set_player_ready', () => {
+      room.setPlayerReady();
     });
   });
 

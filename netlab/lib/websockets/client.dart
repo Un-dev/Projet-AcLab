@@ -10,15 +10,19 @@ void main() {
   socket.onConnect((_) {
     print(socket.id);
     socket.emit('create_room', {'username': 'toto'});
-    socket.emit('show-members');
+    socket.emit('show_members');
+    socket.emit('set_player_ready');
+    socket.emit('show_members');
   });
 
-  _showMembers(dynamic data) {
+  _showInfos(dynamic data) {
     print(data);
   }
 
   socket.on('event', (data) => print(data));
-  socket.on('show-members', (data) => _showMembers(data));
+  socket.on('create_room', (data) => _showInfos(data));
+  socket.on('show_members', (data) => _showInfos(data));
+  socket.on('set_player_ready', (data) => _showInfos(data));
   socket.onDisconnect((_) => print('disconnect'));
   socket.on('fromServer', (_) => print(_));
 }

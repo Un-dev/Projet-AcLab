@@ -22,15 +22,15 @@ export default class Room {
 
       if (clients.length >= 1) {
         await this.socket.join(this.roomId);
-        this.store.clients.push({ id: this.socker.id, username: this.username, isReady: false });
+        this.store.clients.push({ id: this.socket.id, username: this.username, isReady: false });
         this.socket.username = this.username;
-        this.socker.emit('[SUCCESS] Successfully initialised');
+        this.socket.emit('join_room', '[SUCCESS] Successfully initialised');
         console.log(`[JOIN] Client joined room ${this.roomId}`);
         return true;
       }
 
       console.warn(`[JOIN FAILED] Client denied join, as roomId ${this.roomId} not created`);
-      this.socker.emit('Error: Create a room first!');
+      this.socket.emit('join_room', 'Error: Create a room first!');
       return false;
     }
 
@@ -41,18 +41,35 @@ export default class Room {
         this.store.clients = [{ id: this.socket.id, username: this.username, isReady: false }];
         this.socket.username = this.username;
         console.log(`[CREATE] Client created and joined room ${this.roomId}`);
-        this.socket.emit('[SUCCESS] Successfully initialised');
+        this.socket.emit('create_room', '[SUCCESS] Successfully initialised');
         return true;
       }
 
       console.warn(`[CREATE FAILED] Create denied as roomId ${this.roomId} already exists`);
-      this.socker.emit('Error: Room already created. Please join the room!');
+      this.socket.emit('create_room', 'Error: Room already created. Please join the room!');
       return false;
     }
 
   }
 
   showMembers () {
-    this.io.to(this.roomId).emit('show-members', this.store.clients);
+    this.io.to(this.roomId).emit('show_members', this.store.clients);
+    console.log(`ROOM ${this.roomId} : [SHOW MEMBERS]`);
+  }
+
+  setPlayerReady () {
+    const client = this.store.clients.find((client) => client.id === this.socket.id);
+    client.isReady = true;
+    this.socket.emit('set_player_ready', '[SUCCESS] Player is now ready');
+    console.log(`[SET_PLAYER_READY] Socket ${this.socket.id} is now ready`);
+  }
+
+  setAllReady () {
+    this.store.clients = this.store.clients.map((client) => {
+      client.isRrady = true;
+      return client;
+    });
+    this.io.to(this.roomId).emit('set_all_ready', this.store.clients);
+    console.log('[SET_ALL_READY] Players are now all ready');
   }
 }
