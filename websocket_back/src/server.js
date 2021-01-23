@@ -23,6 +23,10 @@ function initServer () {
     socket.on('set_player_ready', () => {
       room.setPlayerReady();
     });
+
+    socket.on('launch_game', () => {
+      room.launchGame();
+    });
   });
 
   io.listen(3000 | process.env.PORT);

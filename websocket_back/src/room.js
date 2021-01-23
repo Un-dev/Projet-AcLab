@@ -1,3 +1,4 @@
+/* eslint-disable no-trailing-spaces */
 /* eslint-disable line-comment-position */
 export default class Room {
 
@@ -64,12 +65,17 @@ export default class Room {
     console.log(`[SET_PLAYER_READY] Socket ${this.socket.id} is now ready`);
   }
 
-  setAllReady () {
+  _setAllReady () {
     this.store.clients = this.store.clients.map((client) => {
       client.isRrady = true;
       return client;
     });
-    this.io.to(this.roomId).emit('set_all_ready', this.store.clients);
+    this.io.to(this.roomId).emit('set_all_ready', '[SUCCESS] All players are now ready');
     console.log('[SET_ALL_READY] Players are now all ready');
+  }
+
+  launchGame () {
+    this._setAllReady();
+    this.io.to(this.roomId).emit('launch_game', '[SUCESS] Game has been launched');  
   }
 }
