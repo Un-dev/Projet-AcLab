@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:netlab/Arguments/RoomArguments.dart';
+import 'package:netlab/actions/ioSocket.dart';
 import 'package:netlab/theme.dart';
 import 'package:netlab/utils/customButton.dart';
 
@@ -20,7 +22,7 @@ class Home extends StatelessWidget {
               CustomButton(
                 label: 'Create a room',
                 onPressed: () {
-                  Navigator.of(context).pushNamed('/createroom');
+                  createRoom(context);
                 },
               ),
               CustomButton(
@@ -39,4 +41,11 @@ class Home extends StatelessWidget {
           ),
         ));
   }
+}
+
+void createRoom(BuildContext context) {
+  final socket = getSocket();
+  socket.emit('create_room', {'username': 'toto'});
+  final int idRoom = 53;
+  Navigator.of(context).pushNamed('/room', arguments: RoomArguments(idRoom));
 }
