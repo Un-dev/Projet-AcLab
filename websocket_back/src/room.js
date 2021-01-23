@@ -75,6 +75,6 @@ export default class Room {
 
   launchGame () {
     this._setAllReady();
-    this.io.to(this.roomId).emit('launch_game', '[SUCESS] Game has been launched');
+    this.io.to(this.roomId).emit('launch_game', '[SUCCESS] Game has been launched');
   }
 }
