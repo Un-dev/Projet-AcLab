@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:netlab/utils/UserItem.dart';
 
 class Room extends StatefulWidget {
   final int idRoom;
+  final List<String> users = ['Jack', 'Pierre', 'Gregoire'];
   Room({this.idRoom});
 
   @override
@@ -16,11 +18,18 @@ class _RoomState extends State<Room> {
       appBar: AppBar(title: Text('Room')),
       body: Center(
         child: Column(
-          children: [
-            Text(widget.idRoom.toString()),
-          ],
+          children: renderUsers(widget.users, widget.idRoom),
         ),
       ),
     );
+  }
+
+  List<Widget> renderUsers(List<String> users, int idRoom) {
+    List<Widget> res = [Text(idRoom.toString())];
+
+    for (var i = 0; i < users.length; i++) {
+      res.add(UserItem(username: users[i]));
+    }
+    return res;
   }
 }
