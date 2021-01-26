@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:netlab/theme.dart';
 import 'package:netlab/utils/UserItem.dart';
 
 class Room extends StatefulWidget {
@@ -25,7 +26,14 @@ class _RoomState extends State<Room> {
   }
 
   List<Widget> renderUsers(List<String> users, int idRoom) {
-    List<Widget> res = [Text(idRoom.toString())];
+    List<Widget> res = [
+      Container(
+          margin: EdgeInsets.only(top: 10),
+          child: Text(
+            idRoom.toString(),
+            style: titleTheme(),
+          ))
+    ];
 
     for (var i = 0; i < users.length; i++) {
       res.add(UserItem(username: users[i]));

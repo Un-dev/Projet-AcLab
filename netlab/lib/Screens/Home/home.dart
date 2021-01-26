@@ -5,8 +5,6 @@ import 'package:netlab/theme.dart';
 import 'package:netlab/utils/CustomButton.dart';
 
 class Home extends StatelessWidget {
-  final ThemeData theme = globalTheme();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +15,7 @@ class Home extends StatelessWidget {
             children: <Widget>[
               Text(
                 'Netlab',
-                style: titleTheme(),
+                style: appTitleTheme(),
               ),
               CustomButton(
                 label: 'Create a room',

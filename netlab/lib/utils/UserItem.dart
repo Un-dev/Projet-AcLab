@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:netlab/theme.dart';
 
 class UserItem extends StatelessWidget {
   final String username;
@@ -7,6 +8,16 @@ class UserItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(child: Text(this.username));
+    ThemeData theme = buttonTheme();
+    TextTheme textStyle = globalTheme().textTheme;
+
+    return Container(
+        margin: EdgeInsets.only(top: 20),
+        height: 50,
+        width: 290,
+        color: theme.backgroundColor,
+        child: Row(children: [
+          Center(child: Text(this.username, style: textStyle.bodyText2))
+        ]));
   }
 }

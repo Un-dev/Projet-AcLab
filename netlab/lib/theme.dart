@@ -5,7 +5,8 @@ ThemeData globalTheme() {
       scaffoldBackgroundColor: Color.fromRGBO(61, 69, 90, 1.0),
       // textTheme: Typography(platform: TargetPlatform.android).white,
       textTheme: TextTheme(
-        bodyText2: TextStyle(color: Colors.white, fontFamily: 'Nunito'),
+        bodyText2:
+            TextStyle(color: Colors.white, fontFamily: 'Nunito', fontSize: 22),
       ));
 }
 
@@ -15,9 +16,13 @@ ThemeData buttonTheme() {
   );
 }
 
-TextStyle titleTheme() {
+TextStyle appTitleTheme() {
   return TextStyle(
       color: Color.fromRGBO(229, 10, 20, 1.0),
       fontSize: 60,
       fontFamily: 'Bebasneue');
+}
+
+TextStyle titleTheme() {
+  return TextStyle(fontSize: 60, fontFamily: 'Bebasneue');
 }
