@@ -24,7 +24,7 @@ export default class Room {
         await this.socket.join(this.roomId);
         this.store.clients.push({ id: this.socket.id, username: this.username, isReady: false });
         this.socket.username = this.username;
-        this.socket.emit('join_room', '[SUCCESS] Successfully initialised');
+        this.socket.emit('join_room', '[SUCCESS] Successfully initialised', { roomID: this.roomId });
         console.log(`[JOIN] Client joined room ${this.roomId}`);
         return true;
       }
@@ -41,7 +41,7 @@ export default class Room {
         this.store.clients = [{ id: this.socket.id, username: this.username, isReady: false }];
         this.socket.username = this.username;
         console.log(`[CREATE] Client created and joined room ${this.roomId}`);
-        this.socket.emit('create_room', '[SUCCESS] Successfully initialised');
+        this.socket.emit('create_room', '[SUCCESS] Successfully initialised', { roomID: this.roomId });
         return true;
       }
 
@@ -62,19 +62,31 @@ export default class Room {
     client.isReady = true;
     this.socket.emit('set_player_ready', '[SUCCESS] Player is now ready');
     console.log(`[SET_PLAYER_READY] Socket ${this.socket.id} is now ready`);
+    if (this._isEveryoneReady) this.launchGame();
+  }
+
+  launchGame () {
+    this._setAllReady();
+    this.io.to(this.roomId).emit('launch_game', '[SUCCESS] Game has been launched');
+    console.log(`[LAUNCH_GAME] game launched for room : ${this.roomId}`);
   }
 
   _setAllReady () {
     this.store.clients = this.store.clients.map((client) => {
-      client.isRrady = true;
+      client.isReady = true;
       return client;
     });
     this.io.to(this.roomId).emit('set_all_ready', '[SUCCESS] All players are now ready');
     console.log('[SET_ALL_READY] Players are now all ready');
   }
 
-  launchGame () {
-    this._setAllReady();
-    this.io.to(this.roomId).emit('launch_game', '[SUCCESS] Game has been launched');
+  _isEveryoneReady () {
+    const numbersOfReady = this.store.clients.reduce((acc, client) => {
+      if (client.isReady) acc += 1;
+      return acc;
+    });
+
+    return numbersOfReady === this.store.clients.length;
   }
+
 }
