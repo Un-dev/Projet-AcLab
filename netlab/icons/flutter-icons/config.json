@@ -17,6 +17,24 @@
       "css": "done",
       "code": 59392,
       "src": "material"
+    },
+    {
+      "uid": "a4cbef22bb105b753b1812bb4dbb954b",
+      "css": "star",
+      "code": 59394,
+      "src": "material"
+    },
+    {
+      "uid": "5a79eed97fae4b71456036d4c1692013",
+      "css": "star_border",
+      "code": 59395,
+      "src": "material"
+    },
+    {
+      "uid": "f4e40c3fc8c109378f9c03b6a9dda973",
+      "css": "star_half",
+      "code": 59396,
+      "src": "material"
     }
   ]
 }

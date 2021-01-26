@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:netlab/utils/myIcons.dart';
+import 'package:netlab/utils/MyIcons.dart';
 class Poll extends StatelessWidget {
   static const String _title = 'Vote';
 
@@ -19,60 +19,109 @@ class CardStatelessWidget extends StatefulWidget {
 
 class CardState extends State<CardStatelessWidget> {
   Widget build(BuildContext context) {
+    double c_width = MediaQuery.of(context).size.width*0.8;
+
     return Scaffold(
+        body:
+        Container(
+          color: Color.fromRGBO(61, 69, 90, 1),
+          child: Column(
+            children: [
+              Container(
+                padding: const EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
+                child: Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  color: Color.fromRGBO(0, 0, 0, 1),
+                  child: Column(
+                    //mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      ClipRRect(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(8.0),
+                            topRight: Radius.circular(8.0),
+                          ),
+                          child:
+                          Container(
+                            decoration: BoxDecoration(
+                              border: Border(
+                                  bottom: BorderSide(color: Colors.white,width: 2.0,)),
+                            ),
+                            padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
+                            child: SizedBox.fromSize(
+                              size: Size(400, 300),
+                              child:Image.network(
+                                'https://cdn.pixabay.com/photo/2020/12/23/08/00/bow-lake-5854210__340.jpg',
+                                fit:BoxFit.fill,
 
-        body: Center(
-          child: Card(
-            child: Column(
+                              ),
 
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start,
 
-              children: <Widget>[
-                SizedBox.fromSize(
-                  size: Size(350, 300),
-                  child: Image.network('https://cdn.pixabay.com/photo/2020/12/23/08/00/bow-lake-5854210__340.jpg'),
+                            ),
+                          )),
+                      ListTile(
+                        title:Text('Star Wars', style: TextStyle(color: Colors.white,fontSize: 30,),textAlign: TextAlign.center),
+                        //subtitle: (),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.fromLTRB(100.0, 0.0, 0.0, 10.0),
+                        child: Row(
+                            children: <Widget>[
+                              Text('Note générale ', style: TextStyle(color: Colors.white,fontSize: 15), textAlign: TextAlign.center),
+                              for (int i = 0; i < 3; i++)
+                                Icon(MyIcons.star,color: Colors.yellow,size: 20,),
+                              for (int i = 0; i < 2; i++)
+                                Icon(MyIcons.star_border,color: Colors.yellow,size: 20,),
+                            ]
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 20.0),
+                        width: c_width,
+                        child: Text('''Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ver since the 1500s, when an unknown printer took a galley of type''',textAlign: TextAlign.center,style: TextStyle(color: Colors.white,fontSize: 15,),
+                          maxLines: 10,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-
-                ButtonBar(
-                  alignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    createButton(MyIcons.done, Colors.green, "done-btn"),
-                    createButton(MyIcons.clear, Colors.red, "clear-btn"),
-                    /*FlatButton(
-                      child: createButton(MyIcons.done, Colors.green),
-                      //padding: EdgeInsets.fromLTRB(66.0, 10.0, 66.0, 10.0),
-                      onPressed: () {
-                        // To do
-                      },
-                    ),*/
-                    /*FlatButton(
-                      child: createButton(MyIcons.clear, Colors.red),
-                      //padding: EdgeInsets.fromLTRB(66.0, 10.0, 66.0, 10.0),
-                      onPressed: () {
-                        // To do
-                      },
-                    ),*/
-                  ],
-                ),
-              ],
-            ),
+              ),
+              ButtonBar(
+                alignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Container(
+                    padding: const EdgeInsets.fromLTRB(0, 0, 60, 0),
+                    child: createButton(MyIcons.done, Colors.green, "done-btn"),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.fromLTRB(60, 0, 0, 0),
+                    child:createButton(MyIcons.clear, Colors.red, "clear-btn"),
+                  ),
+                ],
+              ),
+            ],
           ),
         )
 
+
     );
-  }
+      }
 }
+
 
 Widget createButton(icon, myColor, tag){
   return SizedBox(
-
-        child: FloatingActionButton(
-          heroTag: tag,
-          onPressed: () {},
-          child: Icon(icon,color: myColor,size: 35,),
-          backgroundColor: Colors.black87,
-        ),
-      );
+        child: Center(
+            child:FloatingActionButton(
+              heroTag: tag,
+              onPressed: () {},
+              child: Icon(icon,color: myColor,size: 35,),
+              backgroundColor: Colors.black54,
+            ),
+        )
+  );
 }
