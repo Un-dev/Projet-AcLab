@@ -3,12 +3,15 @@ package com.example.Aclab.controller;
 import com.example.Aclab.AclabApplication;
 import com.uwetrottmann.tmdb2.Tmdb;
 import com.uwetrottmann.tmdb2.entities.Movie;
+import com.uwetrottmann.tmdb2.entities.MovieResultsPage;
 import com.uwetrottmann.tmdb2.services.MoviesService;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import retrofit2.Response;
@@ -22,7 +25,7 @@ import java.nio.charset.Charset;
 public class helloController {
 
 
-    @GetMapping
+    /*@GetMapping
     public Movie hello(){
         Tmdb tmdb = new Tmdb(AclabApplication.API_KEY);
         MoviesService moviesService = tmdb.moviesService();
@@ -40,10 +43,29 @@ public class helloController {
             System.out.println("error");
         }
         return movieRes;
+    }*/
+
+    @GetMapping
+    public MovieResultsPage GetAllMovieByPopularity(@RequestHeader("page") int page){
+        Tmdb tmdb = new Tmdb(AclabApplication.API_KEY);
+        MoviesService moviesService = tmdb.moviesService();
+        MovieResultsPage movieRes = null;
+        try {
+            Response<MovieResultsPage> response = moviesService.popular(page, "fr", "FR")
+                    .execute();
+            if (response.isSuccessful()) {
+                MovieResultsPage movie = response.body();
+                movieRes = movie;
+                System.out.println(movie.total_results + " movie, is awesome!");
+            }
+        } catch (Exception e) {
+            System.out.println("error");
+        }
+        return movieRes;
     }
 
     @GetMapping("/{id}")
-    public Movie MovieById(@PathVariable("id") int id){
+    public Movie GetMovieById(@PathVariable("id") int id){
         Tmdb tmdb = new Tmdb(AclabApplication.API_KEY);
         MoviesService moviesService = tmdb.moviesService();
         Movie movieRes = null;
