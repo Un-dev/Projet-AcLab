@@ -8,6 +8,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import retrofit2.Response;
@@ -29,6 +30,25 @@ public class helloController {
         // Call any of the available endpoints
         try {
             Response<Movie> response = moviesService.summary(550, "fr")
+                    .execute();
+            if (response.isSuccessful()) {
+                Movie movie = response.body();
+                movieRes = movie;
+                System.out.println(movie.title + " is awesome!");
+            }
+        } catch (Exception e) {
+            System.out.println("error");
+        }
+        return movieRes;
+    }
+
+    @GetMapping("/{id}")
+    public Movie MovieById(@PathVariable("id") int id){
+        Tmdb tmdb = new Tmdb(AclabApplication.API_KEY);
+        MoviesService moviesService = tmdb.moviesService();
+        Movie movieRes = null;
+        try {
+            Response<Movie> response = moviesService.summary(id, "fr")
                     .execute();
             if (response.isSuccessful()) {
                 Movie movie = response.body();
