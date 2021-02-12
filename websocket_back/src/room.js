@@ -39,6 +39,7 @@ export default class Room {
       if (clients.length < 1) {
         await this.socket.join(this.roomId);
         this.store.clients = [{ id: this.socket.id, username: this.username, isReady: false }];
+        this.store.movies = [];
         this.socket.username = this.username;
         console.log(`[CREATE] Client created and joined room ${this.roomId}`);
         this.socket.emit('create_room', '[SUCCESS] Successfully initialised', { roomID: this.roomId });
@@ -62,13 +63,34 @@ export default class Room {
     client.isReady = true;
     this.socket.emit('set_player_ready', '[SUCCESS] Player is now ready');
     console.log(`[SET_PLAYER_READY] Socket ${this.socket.id} is now ready`);
-    if (this._isEveryoneReady) this.launchGame();
+    if (this._isEveryoneReady()) this.launchGame();
   }
 
   launchGame () {
     this._setAllReady();
     this.io.to(this.roomId).emit('launch_game', '[SUCCESS] Game has been launched');
     console.log(`[LAUNCH_GAME] game launched for room : ${this.roomId}`);
+  }
+
+  filmChosen (newMovie) {
+    const movie = this.store.movies.find((movie) => movie.id === newMovie.id);
+    if (movie) {
+      const index = this.store.movies.findIndex(movie);
+      const changedMovie = { ...movie, numbersSwiped: movie.numbersSwiped + 1 };
+      const votePercentage = changedMovie.numbersSwiped / this.store.clients.length;
+      if (votePercentage > 0.60) {
+        this.io.to(this.roomId).emit('film_chosen', '[ENDED] Movie has been chosen', { id_movie: movie.id, is_added: false, is_finished: true, votePercentage: votePercentage });
+        console.log(`[ENDED] Film has been chosen for room ${this.roomId}`);
+        return;
+      }
+      this.store.movies[index] = changedMovie;
+      this.io.to(this.roomId).emit('film_chosen', '[CONTINUE] Movie has one more vote', { id_movie: movie.id, is_added: false, is_finished: false });
+      console.log(`[CONTINUE] movie has one more vote for room:  ${this.roomId}`);
+      return;
+    }
+    this.store.movies.push(newMovie);
+    this.io.to(this.roomId).emit('film_chosen', '[ADDED] Movie has been added', { id_movie: movie.id, is_added: true, is_finished: false });
+    console.log(`[ADDED] movie has been added to the list for room:  ${this.roomId}`);
   }
 
   _setAllReady () {
@@ -88,5 +110,11 @@ export default class Room {
 
     return numbersOfReady === this.store.clients.length;
   }
+
+  // TODO
+  // 0. Rajouter un store (store -> this.store.xxx = ...) [{movie_id: movie_id, numbersSwiped: X}];
+  // 1. 'film_chosen' => Entrée : Un id de film / Sortie : ['MSG', {is_added: true | false, is_finished: true | false}]
+  // 2. Quand on detecte qu'on a 60% de personnes qui ont choisis un film on va renvoyer à tout le monde (la room) que c'est fini
+  // On renvoit l'id du film ^
 
 }
