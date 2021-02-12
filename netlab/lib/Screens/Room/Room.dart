@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:netlab/theme.dart';
 import 'package:netlab/utils/UserItem.dart';
+import 'package:netlab/utils/customButton.dart';
 
 class Room extends StatefulWidget {
   final int idRoom;
@@ -38,6 +39,7 @@ class _RoomState extends State<Room> {
     for (var i = 0; i < users.length; i++) {
       res.add(UserItem(username: users[i]));
     }
+    res.add(CustomButton(label: 'start', onPressed: () {}, buttonColor: 'red'));
     return res;
   }
 }

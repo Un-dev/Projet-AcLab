@@ -16,6 +16,12 @@ ThemeData buttonTheme() {
   );
 }
 
+ThemeData redButtonTheme() {
+  return ThemeData(
+    backgroundColor: Color.fromRGBO(229, 10, 20, 1.0),
+  );
+}
+
 TextStyle appTitleTheme() {
   return TextStyle(
       color: Color.fromRGBO(229, 10, 20, 1.0),
