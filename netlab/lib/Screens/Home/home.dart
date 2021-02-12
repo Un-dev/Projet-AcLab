@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:netlab/Arguments/RoomArguments.dart';
 import 'package:netlab/actions/ioSocket.dart';
 import 'package:netlab/theme.dart';
-import 'package:netlab/utils/customButton.dart';
+import 'package:netlab/utils/CustomButton.dart';
 
 class Home extends StatelessWidget {
-  final ThemeData theme = globalTheme();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +15,7 @@ class Home extends StatelessWidget {
             children: <Widget>[
               Text(
                 'Netlab',
-                style: titleTheme(),
+                style: appTitleTheme(),
               ),
               CustomButton(
                 label: 'Create a room',
@@ -45,7 +43,8 @@ class Home extends StatelessWidget {
 
 void createRoom(BuildContext context) {
   final socket = getSocket();
-  socket.emit('create_room', {'username': 'toto'});
+  //returns an array
+  socket.emit('create', {'username': 'toto'});
   final int idRoom = 53;
   Navigator.of(context).pushNamed('/room', arguments: RoomArguments(idRoom));
 }
