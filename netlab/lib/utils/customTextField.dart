@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_color/flutter_color.dart';
+import 'package:netlab/theme.dart';
 
 
-Widget textfieldWidget(textStyle, codeController, mKeyboardtype,placeholder) {
+Widget textfieldWidget(textStyle, codeController, mKeyboardtype, placeholder) {
   return Column(
     children: [
       TextField(
@@ -10,23 +10,24 @@ Widget textfieldWidget(textStyle, codeController, mKeyboardtype,placeholder) {
         controller: codeController,
         decoration: InputDecoration(
             hintText: placeholder,
-            hintStyle: TextStyle(color: Colors.white),
+            hintStyle: titleTheme(),
             labelStyle: textStyle,
             filled: true,
-            fillColor: Color.fromRGBO(91,101,129,1),
+            fillColor: textfieldFillColorTheme(),
             focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.white),
-              borderRadius: BorderRadius.circular(25.7),
+              borderSide: textfieldFocusedOIBSTheme(),
+              borderRadius: textfieldFocusedOIBRTheme(),
             ),
             border: OutlineInputBorder(
-              //borderSide: BorderSide(color: Colors.white),
-              borderRadius: BorderRadius.circular(10.0),
+              borderSide: textfieldBorderBSTheme(),
+              borderRadius: textfieldBorderOIBSTheme(),
             )
         ),
         keyboardType: mKeyboardtype,
       ),
     ],
   );
+
 
 }
 

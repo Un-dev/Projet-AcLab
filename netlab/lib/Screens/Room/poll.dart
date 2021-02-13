@@ -5,11 +5,28 @@ class Poll extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const PrimaryColor = const Color(0xFF151026);
     return Scaffold(
-      appBar: AppBar(title: const Text(_title)),
+      appBar: AppBar(
+          title: Text(_title),),
       body: CardStatelessWidget(),
     );
+
   }
+}
+Widget createAppbar(context){
+  return  Container(
+    height: 200.0,
+    decoration: new BoxDecoration(
+      color: Colors.orange,
+      boxShadow: [
+        new BoxShadow(blurRadius: 40.0)
+      ],
+      borderRadius: new BorderRadius.vertical(
+          bottom: new Radius.elliptical(
+              MediaQuery.of(context).size.width, 100.0)),
+    ),
+  );
 }
 
 class CardStatelessWidget extends StatefulWidget {
@@ -24,9 +41,15 @@ class CardState extends State<CardStatelessWidget> {
     return Scaffold(
         body:
         Container(
+
           color: Color.fromRGBO(61, 69, 90, 1),
           child: Column(
             children: [
+             /* Stack(
+                children: [
+                  createAppbar(context),
+                ],
+              ),*/
               Container(
                 padding: const EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
                 child: Card(

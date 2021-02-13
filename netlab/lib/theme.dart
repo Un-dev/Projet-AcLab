@@ -40,10 +40,26 @@ InputDecoration textfieldTemplate (textStyle){
   );
 }
 
-ThemeData titleTheme() {
-  //todo
-  return ThemeData();
+TextStyle titleTheme() {
+  return TextStyle(fontSize: 60, fontFamily: 'Bebasneue');
 }
 
+Color textfieldFillColorTheme() {
+  return Color.fromRGBO(91,101,129,1);
+}
 
+BorderSide textfieldFocusedOIBSTheme(){
+  return BorderSide(color: Colors.white);
+}
 
+BorderRadius textfieldFocusedOIBRTheme(){
+  return BorderRadius.circular(25.7);
+}
+
+BorderRadius textfieldBorderOIBSTheme(){
+  return BorderRadius.circular(10.0);
+}
+
+BorderSide textfieldBorderBSTheme(){
+  return BorderSide(color: Colors.white);
+}
