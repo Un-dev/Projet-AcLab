@@ -40,9 +40,6 @@ InputDecoration textfieldTemplate (textStyle){
   );
 }
 
-TextStyle titleTheme() {
-  return TextStyle(fontSize: 60, fontFamily: 'Bebasneue');
-}
 
 Color textfieldFillColorTheme() {
   return Color.fromRGBO(91,101,129,1);

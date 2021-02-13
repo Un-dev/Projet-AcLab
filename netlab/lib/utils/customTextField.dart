@@ -10,7 +10,7 @@ Widget textfieldWidget(textStyle, codeController, mKeyboardtype, placeholder) {
         controller: codeController,
         decoration: InputDecoration(
             hintText: placeholder,
-            hintStyle: titleTheme(),
+            hintStyle: TextStyle(color: Colors.white), //
             labelStyle: textStyle,
             filled: true,
             fillColor: textfieldFillColorTheme(),
@@ -27,6 +27,7 @@ Widget textfieldWidget(textStyle, codeController, mKeyboardtype, placeholder) {
       ),
     ],
   );
+
 
 
 }
