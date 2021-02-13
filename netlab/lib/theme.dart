@@ -56,10 +56,12 @@ BorderRadius textfieldFocusedOIBRTheme(){
   return BorderRadius.circular(25.7);
 }
 
-BorderRadius textfieldBorderOIBSTheme(){
+BorderSide textfieldBorderOIBSTheme(){
+  return BorderSide(color: Colors.white);
+}
+
+BorderRadius textfieldBorderOIBRTheme(){
   return BorderRadius.circular(10.0);
 }
 
-BorderSide textfieldBorderBSTheme(){
-  return BorderSide(color: Colors.white);
-}
+

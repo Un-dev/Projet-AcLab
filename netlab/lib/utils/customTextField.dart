@@ -19,8 +19,8 @@ Widget textfieldWidget(textStyle, codeController, mKeyboardtype, placeholder) {
               borderRadius: textfieldFocusedOIBRTheme(),
             ),
             border: OutlineInputBorder(
-              borderSide: textfieldBorderBSTheme(),
-              borderRadius: textfieldBorderOIBSTheme(),
+              borderSide: textfieldBorderOIBSTheme(),
+              borderRadius: textfieldBorderOIBRTheme(),
             )
         ),
         keyboardType: mKeyboardtype,
