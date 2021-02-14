@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_color/flutter_color.dart';
 import 'package:netlab/utils/customButton.dart';
 import 'package:netlab/utils/customTextField.dart';
-
 
 class JoinRoom extends StatelessWidget {
   @override
@@ -19,7 +19,9 @@ class CustomForm extends StatefulWidget {
   State<StatefulWidget> createState() => FormState();
 }
 
+
 class FormState extends State<CustomForm> {
+
   String result = '';
   TextEditingController codeController = TextEditingController();
 
@@ -52,3 +54,4 @@ class FormState extends State<CustomForm> {
     );
   }
 }
+

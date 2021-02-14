@@ -41,18 +41,13 @@ BorderRadius textfieldBorderOIBRTheme(){
   return BorderRadius.circular(10.0);
 }
 
-
-
-
 ThemeData globalTheme() {
-  ThemeData globalTheme() {
-    return ThemeData(
-      backgroundColor: Color(0x3D455AFF),
-      textTheme: TextTheme(),
-      fontFamily: 'Nunito',
-    );
-  }
-
+  return ThemeData(
+      scaffoldBackgroundColor: Color.fromRGBO(61, 69, 90, 1.0),
+      textTheme: TextTheme(
+        bodyText2:
+            TextStyle(color: Colors.white, fontFamily: 'Nunito', fontSize: 22),
+      ));
 }
 
 ThemeData buttonTheme() {
@@ -84,14 +79,20 @@ InputDecoration textfieldTemplate (textStyle){
   );
 }
 
+ThemeData redButtonTheme() {
+  return ThemeData(
+    backgroundColor: Color.fromRGBO(229, 10, 20, 1.0),
+  );
+}
 
+TextStyle appTitleTheme() {
+  return TextStyle(
+      color: Color.fromRGBO(229, 10, 20, 1.0),
+      fontSize: 60,
+      fontFamily: 'Bebasneue');
+}
 
-
-
-
-
-
-
-
-
+TextStyle titleTheme() {
+  return TextStyle(fontSize: 60, fontFamily: 'Bebasneue');
+}
 
