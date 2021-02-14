@@ -13,13 +13,13 @@ Widget textfieldWidget(textStyle, codeController, mKeyboardtype, placeholder) {
             hintStyle: TextStyle(color: Colors.white), //
             labelStyle: textStyle,
             filled: true,
-            fillColor: textfieldFillColorTheme(),
+            fillColor: textfieldFillColorTheme,
             focusedBorder: OutlineInputBorder(
-              borderSide: textfieldFocusedOIBSTheme(),
+              borderSide: textfieldFocusedOIBSTheme,
               borderRadius: textfieldFocusedOIBRTheme(),
             ),
             border: OutlineInputBorder(
-              borderSide: textfieldBorderOIBSTheme(),
+              borderSide: textfieldBorderOIBSTheme,
               borderRadius: textfieldBorderOIBRTheme(),
             )
         ),
