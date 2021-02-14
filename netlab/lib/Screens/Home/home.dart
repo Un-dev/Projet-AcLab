@@ -30,6 +30,12 @@ class Home extends StatelessWidget {
                 },
               ),
               CustomButton(
+                label: 'Vote',
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/poll');
+                },
+              ),
+              CustomButton(
                 label: 'About',
                 onPressed: () {
                   Navigator.of(context).pushNamed('/about');
