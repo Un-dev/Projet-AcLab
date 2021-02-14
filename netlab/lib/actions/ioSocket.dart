@@ -31,6 +31,9 @@ void connectAndListen() {
     navigatorKey.currentState.pushNamed('/room',
         arguments: RoomArguments(data[1]["roomID"], data[1]["username"]));
   });
+  socket.on('nom du truc', (data) {
+    //TODO
+  })
   socket.onDisconnect((_) => print('disconnect'));
 }
 
