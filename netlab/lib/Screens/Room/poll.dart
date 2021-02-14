@@ -130,7 +130,6 @@ class CardState extends State<CardStatelessWidget> {
   }
 }
 
-
 Widget createButton(icon, myColor, tag){
   return SizedBox(
       child: Center(
@@ -143,3 +142,4 @@ Widget createButton(icon, myColor, tag){
       )
   );
 }
+
