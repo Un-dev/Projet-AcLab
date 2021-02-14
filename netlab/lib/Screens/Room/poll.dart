@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:netlab/utils/MyIcons.dart';
+import 'package:netlab/theme.dart';
+
 class Poll extends StatelessWidget {
   static const String _title = 'Vote';
 
@@ -8,7 +10,7 @@ class Poll extends StatelessWidget {
     const PrimaryColor = const Color(0xFF151026);
     return Scaffold(
       appBar: AppBar(
-          title: Text(_title),),
+        title: Text(_title),),
       body: CardStatelessWidget(),
     );
 
@@ -42,66 +44,61 @@ class CardState extends State<CardStatelessWidget> {
         body:
         Container(
 
-          color: Color.fromRGBO(61, 69, 90, 1),
+          color: pullBackgroundColorTheme,
           child: Column(
             children: [
-             /* Stack(
+              /* Stack(
                 children: [
                   createAppbar(context),
                 ],
               ),*/
               Container(
-                padding: const EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
+                padding: mEdgeInsets(10.0, 10.0, 10.0, 10.0),
                 child: Card(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
-                  color: Color.fromRGBO(0, 0, 0, 1),
+                  color: cardBackgroundColorTheme,
                   child: Column(
                     //mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
                       ClipRRect(
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(8.0),
-                            topRight: Radius.circular(8.0),
-                          ),
+                          borderRadius: cardPollBorderRadius(),
                           child:
                           Container(
                             decoration: BoxDecoration(
                               border: Border(
-                                  bottom: BorderSide(color: Colors.white,width: 2.0,)),
+                                  bottom: BorderSide(color: colorBorderContainerImg, width: borderSideContainerImg,)),
                             ),
-                            padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
+                            padding: mEdgeInsets(0.0, 0.0, 0.0, 0.0),
                             child: SizedBox.fromSize(
-                              size: Size(400, 300),
+                              size: pollImgSize(),
                               child:Image.network(
                                 'https://cdn.pixabay.com/photo/2020/12/23/08/00/bow-lake-5854210__340.jpg',
                                 fit:BoxFit.fill,
                               ),
-
-
                             ),
                           )),
                       ListTile(
-                        title:Text('Star Wars', style: TextStyle(color: Colors.white,fontSize: 30,),textAlign: TextAlign.center),
+                        title: Text('Star Wars', style: titleCardStyle(),textAlign: TextAlign.center),
                         //subtitle: (),
                       ),
                       Container(
-                        padding: const EdgeInsets.fromLTRB(100.0, 0.0, 0.0, 10.0),
+                        padding: mEdgeInsets(100.0, 0.0, 0.0, 10.0),
                         child: Row(
                             children: <Widget>[
-                              Text('Note générale ', style: TextStyle(color: Colors.white,fontSize: 15), textAlign: TextAlign.center),
+                              Text('Note générale ', style: noteCardStyle(), textAlign: TextAlign.center),
                               for (int i = 0; i < 3; i++)
-                                Icon(MyIcons.star,color: Colors.yellow,size: 20,),
+                                Icon(MyIcons.star,color: starIconColorTheme,size: starIconSizeTheme,),
                               for (int i = 0; i < 2; i++)
-                                Icon(MyIcons.star_border,color: Colors.yellow,size: 20,),
+                                Icon(MyIcons.star_border,color: starIconColorTheme,size: starIconSizeTheme,),
                             ]
                         ),
                       ),
                       Container(
-                        padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 20.0),
+                        padding: mEdgeInsets(0.0, 0.0, 0.0, 20.0),
                         width: c_width,
                         child: Text('''Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ver since the 1500s, when an unknown printer took a galley of type''',textAlign: TextAlign.center,style: TextStyle(color: Colors.white,fontSize: 15,),
                           maxLines: 10,
@@ -116,12 +113,12 @@ class CardState extends State<CardStatelessWidget> {
                 alignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Container(
-                    padding: const EdgeInsets.fromLTRB(0, 0, 60, 0),
-                    child: createButton(MyIcons.done, Colors.green, "done-btn"),
+                    padding: mEdgeInsets(0, 0, 60, 0),
+                    child: createButton(MyIcons.done, iconDoneColorTheme, "done-btn"),
                   ),
                   Container(
-                    padding: const EdgeInsets.fromLTRB(60, 0, 0, 0),
-                    child:createButton(MyIcons.clear, Colors.red, "clear-btn"),
+                    padding: mEdgeInsets(60, 0, 0, 0),
+                    child: createButton(MyIcons.clear, iconClearColorTheme, "clear-btn"),
                   ),
                 ],
               ),
@@ -129,21 +126,20 @@ class CardState extends State<CardStatelessWidget> {
           ),
         )
 
-
     );
-      }
+  }
 }
 
 
 Widget createButton(icon, myColor, tag){
   return SizedBox(
-        child: Center(
-            child:FloatingActionButton(
-              heroTag: tag,
-              onPressed: () {},
-              child: Icon(icon,color: myColor,size: 35,),
-              backgroundColor: Colors.black54,
-            ),
-        )
+      child: Center(
+        child:FloatingActionButton(
+          heroTag: tag,
+          onPressed: () {},
+          child: Icon(icon,color: myColor,size: sizePullButtonTheme,),
+          backgroundColor: blackPollButtonTheme,
+        ),
+      )
   );
 }
