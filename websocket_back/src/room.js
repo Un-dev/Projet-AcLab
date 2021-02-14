@@ -42,7 +42,7 @@ export default class Room {
         this.store.movies = [];
         this.socket.username = this.username;
         console.log(`[CREATE] Client created and joined room ${this.roomId}`);
-        this.socket.emit('create_room', '[SUCCESS] Successfully initialised', { roomID: this.roomId });
+        this.socket.emit('create_room', '[SUCCESS] Successfully initialised', { roomID: this.roomId, username: this.username });
         return true;
       }
 

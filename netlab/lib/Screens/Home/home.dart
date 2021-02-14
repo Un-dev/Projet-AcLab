@@ -20,7 +20,7 @@ class Home extends StatelessWidget {
               CustomButton(
                 label: 'Create a room',
                 onPressed: () {
-                  createRoom(context);
+                  Navigator.of(context).pushNamed('/createroom');
                 },
               ),
               CustomButton(
@@ -44,7 +44,5 @@ class Home extends StatelessWidget {
 void createRoom(BuildContext context) {
   final socket = getSocket();
   //returns an array
-  socket.emit('create', {'username': 'toto'});
-  final int idRoom = 53;
-  Navigator.of(context).pushNamed('/room', arguments: RoomArguments(idRoom));
+  socket.emit('create_room', {'username': 'toto'});
 }

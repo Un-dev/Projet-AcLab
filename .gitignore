@@ -3,3 +3,4 @@
 *.ipr
 *.iws
 .idea/
+websocket_back/package-lock.json

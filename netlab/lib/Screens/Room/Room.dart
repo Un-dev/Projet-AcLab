@@ -5,8 +5,8 @@ import 'package:netlab/utils/customButton.dart';
 
 class Room extends StatefulWidget {
   final int idRoom;
-  final List<String> users = ['Jack', 'Pierre', 'Gregoire'];
-  Room({this.idRoom});
+  List<String> users = ['Utilisateurs', 'Par', 'Défaut'];
+  Room({this.idRoom, this.users});
 
   @override
   State<StatefulWidget> createState() => _RoomState();
