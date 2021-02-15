@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const Color  pullBackgroundColorTheme = Color.fromRGBO(61, 69, 90, 1);
+const Color  backgroundColorTheme = Color.fromRGBO(61, 69, 90, 1);
 const Color  cardBackgroundColorTheme = Color.fromRGBO(0, 0, 0, 1);
 const Color  starIconColorTheme = Colors.yellow;
 const double starIconSizeTheme = 20;
@@ -31,6 +31,9 @@ TextStyle noteCardStyle(){
 }
 
 
+
+
+
 const Color      textfieldFillColorTheme = Color.fromRGBO(91,101,129,1);
 const BorderSide textfieldFocusedOIBSTheme = BorderSide(color: Colors.white);
 const BorderSide textfieldBorderOIBSTheme = BorderSide(color: Colors.white);
@@ -40,6 +43,13 @@ BorderRadius textfieldFocusedOIBRTheme(){
 BorderRadius textfieldBorderOIBRTheme(){
   return BorderRadius.circular(10.0);
 }
+
+
+//textfield and textfield,
+const double spaceBetweenTexfield=10;
+// textfield and button
+const double spaceBetweenTB=15;
+
 
 ThemeData globalTheme() {
   return ThemeData(
@@ -95,4 +105,5 @@ TextStyle appTitleTheme() {
 TextStyle titleTheme() {
   return TextStyle(fontSize: 60, fontFamily: 'Bebasneue');
 }
+
 

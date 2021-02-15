@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:netlab/Arguments/RoomArguments.dart';
 import 'package:netlab/actions/ioSocket.dart';
 import 'package:netlab/theme.dart';
-import 'package:netlab/utils/CustomButton.dart';
+import 'package:netlab/utils/customButton.dart';
 
 class Home extends StatelessWidget {
   @override

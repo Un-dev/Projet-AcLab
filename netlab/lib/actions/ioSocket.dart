@@ -31,9 +31,17 @@ void connectAndListen() {
     navigatorKey.currentState.pushNamed('/room',
         arguments: RoomArguments(data[1]["roomID"], data[1]["username"]));
   });
-  socket.on('nom du truc', (data) {
-    //TODO
-  })
+
+  socket.on('eventjoinroom', (data) {
+    socket.on('join_room', (data) {
+      print(data);
+      print(data[1]["roomID"]);
+      print(data[1]["username"]);
+
+      navigatorKey.currentState.pushNamed('/room',
+          arguments: RoomArguments(data[1]["roomID"], data[1]["username"]));
+    }
+    ); });
   socket.onDisconnect((_) => print('disconnect'));
 }
 
