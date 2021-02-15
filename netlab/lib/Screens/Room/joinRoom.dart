@@ -1,60 +1,52 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_color/flutter_color.dart';
+import 'package:netlab/utils/customButton.dart';
+import 'package:netlab/utils/customTextField.dart';
+
 class JoinRoom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text('Join Room')), body: JoinRoomForm());
+      appBar: AppBar(title: Text('Join Room')),
+      body: CustomForm(),
+    );
   }
 }
 
-class JoinRoomForm extends StatefulWidget {
+class CustomForm extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => _JoinRoomFormState();
+  State<StatefulWidget> createState() => FormState();
 }
 
-class _JoinRoomFormState extends State<JoinRoomForm> {
+
+class FormState extends State<CustomForm> {
+
   String result = '';
   TextEditingController codeController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    TextStyle textStyle = Theme.of(context).textTheme.title;
+    TextStyle textStyle = Theme
+        .of(context)
+        .textTheme
+        .title;
     return Scaffold(
-      body: Container(
-        color: Color.fromRGBO(61, 69, 90, 1.0),
+      body:
+      Container(
+        color: Color.fromRGBO(61, 69, 90, 1),
         padding: EdgeInsets.all(15.0),
         child: Column(
           children: <Widget>[
-            TextField(
-              controller: codeController,
-              decoration: InputDecoration(
-                  hintText: 'Enter room code',
-                  labelStyle: textStyle,
-                  filled: true,
-                  fillColor: Color.fromRGBO(91, 101, 129, 1.0),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white),
-                    borderRadius: BorderRadius.circular(25.7),
-                  ),
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white),
-                    borderRadius: BorderRadius.circular(10.0),
-                  )),
-              keyboardType: TextInputType.number,
+            textfieldWidget(textStyle, codeController, TextInputType.number,"Enter room code"),
+            CustomButton(
+              label: 'join',
+              onPressed: () {
+                setState(() {
+                  result = codeController.text;
+                });
+              },
             ),
-            RaisedButton(
-                color: Color.fromRGBO(229, 10, 20, 1.0),
-                textColor: Theme.of(context).primaryColorLight,
-                onPressed: () {
-                  setState(() {
-                    result = codeController.text;
-                  });
-                },
-                child: Text(
-                  'Join',
-                  textScaleFactor: 1.5,
-                )),
             Text(result),
           ],
         ),
@@ -62,3 +54,4 @@ class _JoinRoomFormState extends State<JoinRoomForm> {
     );
   }
 }
+

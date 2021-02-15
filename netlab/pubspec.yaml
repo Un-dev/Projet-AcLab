@@ -84,6 +84,10 @@ flutter:
   - family: Bebasneue
     fonts:
       - asset: fonts/BebasNeue/BebasNeue.otf
+  - family: MyIcons
+    fonts:
+      - asset: ./icons/flutter-icons/fonts/MyFlutterApp.ttf
+
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
