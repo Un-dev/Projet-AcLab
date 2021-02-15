@@ -4,10 +4,11 @@ import 'package:netlab/utils/customButton.dart';
 import 'package:netlab/theme.dart';
 
 class CreateRoom extends StatelessWidget {
+  static const String _title = 'Create Room';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text('Create Room')), body: CreateRoomForm());
+        appBar: AppBar(title: Text(_title)), body: CreateRoomForm());
   }
 }
 

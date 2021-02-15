@@ -8,10 +8,11 @@ import 'package:netlab/utils/customTextField.dart';
 
 
 class JoinRoom extends StatelessWidget {
+  static const String _title = 'Join Room';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Join Room')),
+      appBar: AppBar(title: Text(_title)),
       body: CustomForm(),
     );
   }
@@ -26,8 +27,9 @@ class CustomForm extends StatefulWidget {
 class FormState extends State<CustomForm> {
 
   String result = '';
+  String result1 = '';
   TextEditingController codeController = TextEditingController();
-  TextEditingController nameController = TextEditingController();
+  TextEditingController usernameController = TextEditingController();
 
 
   @override
@@ -43,23 +45,31 @@ class FormState extends State<CustomForm> {
         padding: EdgeInsets.all(15.0),
         child: Column(
           children: <Widget>[
-            textfieldWidget(textStyle, nameController, TextInputType.text,"Enter your name"),
+            textfieldWidget(textStyle, usernameController, TextInputType.text,"Enter your name"),
             SizedBox(height: spaceBetweenTexfield),
             textfieldWidget(textStyle, codeController, TextInputType.number,"Enter room code"),
             SizedBox(height: spaceBetweenTB),
+
             CustomButton(
               label: 'join',
               onPressed: () {
                 setState(() {
                   result = codeController.text;
+                  result1 = usernameController.text;
                 });
               },
+
             ),
             Text(result),
+            Text(result1),
           ],
         ),
       ),
     );
+  }
+
+  bool check_room(idroom, idroomtest){
+    return idroom == idroomtest? true: false;
   }
   
 }

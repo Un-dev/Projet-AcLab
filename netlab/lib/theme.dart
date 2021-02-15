@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 
+//générale
 const Color  backgroundColorTheme = Color.fromRGBO(61, 69, 90, 1);
+
+//poll page
 const Color  cardBackgroundColorTheme = Color.fromRGBO(0, 0, 0, 1);
 const Color  starIconColorTheme = Colors.yellow;
 const double starIconSizeTheme = 20;
 const Color  iconDoneColorTheme = Colors.green;
 const Color  iconClearColorTheme = Colors.red;
 const Color  blackPollButtonTheme = Colors.black54;
-const double sizePullButtonTheme = 35;
+const double sizePollButtonTheme = 35;
 const double borderSideContainerImg = 2.0;
 const Color colorBorderContainerImg=Colors.white;
+const int totalStarsNumber = 5;
 
 Size pollImgSize(){
   return Size(400, 300);
@@ -26,10 +30,8 @@ BorderRadius cardPollBorderRadius(){
 TextStyle titleCardStyle(){
   return TextStyle(color: Colors.white,fontSize: 30,);
 }
-TextStyle noteCardStyle(){
-  return TextStyle(color: Colors.white,fontSize: 15,);
-}
 
+TextStyle noteCardStyle = TextStyle(color: Colors.white,fontSize: 15,);
 
 
 
@@ -64,11 +66,7 @@ ThemeData buttonTheme() {
   return ThemeData(
     backgroundColor: Color(0x5B6581FF),
     accentColor: Colors.cyan[600],
-    textTheme: TextTheme(
-      //button: TextStyle(fontSize: 72.0),
-      //headline6: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
-      //bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
-    ),
+    textTheme: TextTheme(),
   );
 }
 

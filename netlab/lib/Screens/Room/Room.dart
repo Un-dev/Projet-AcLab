@@ -46,7 +46,8 @@ class _RoomState extends State<Room> {
         onPressed: () {
           socket.emit('launch_game');
         },
-        buttonColor: 'red'));
+        buttonColor: 'red',
+        ));
     return res;
   }
 }
