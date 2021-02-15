@@ -25,8 +25,6 @@ void connectAndListen() {
   socket.on('event', (data) => streamSocket.addResponse);
   socket.on('create_room', (data) {
     print(data);
-    print(data[1]["roomID"]);
-    print(data[1]["username"]);
 
     navigatorKey.currentState.pushNamed('/room',
         arguments: RoomArguments(data[1]["roomID"], data[1]["username"]));
@@ -36,9 +34,12 @@ void connectAndListen() {
     //fetch films
     //store films in a state
     //redirect to poll
+    navigatorKey.currentState.pushNamed('/poll');
   });
 
   socket.on('join_room', (data) {
+    print(data);
+
     navigatorKey.currentState.pushNamed('/room',
         arguments: RoomArguments(data[1]["roomID"], data[1]["username"]));
   });
