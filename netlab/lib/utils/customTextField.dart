@@ -6,11 +6,10 @@ Widget textfieldWidget(textStyle, codeController, mKeyboardtype, placeholder) {
   return Column(
     children: [
       TextField(
-        //Style: Colors.blue,
         controller: codeController,
         decoration: InputDecoration(
             hintText: placeholder,
-            hintStyle: TextStyle(color: Colors.white), //
+            hintStyle: TextStyle(color: Colors.white,), //
             labelStyle: textStyle,
             filled: true,
             fillColor: textfieldFillColorTheme,

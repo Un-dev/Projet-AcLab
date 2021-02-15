@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:netlab/actions/ioSocket.dart';
 import 'package:netlab/utils/customButton.dart';
+import 'package:netlab/theme.dart';
 
 class CreateRoom extends StatelessWidget {
   @override
@@ -24,7 +25,7 @@ class _CreateRoomFormState extends State<CreateRoomForm> {
     TextStyle textStyle = Theme.of(context).textTheme.title;
     return Scaffold(
       body: Container(
-        color: Color.fromRGBO(61, 69, 90, 1.0),
+        color: backgroundColorTheme,
         padding: EdgeInsets.all(15.0),
         child: Column(
           children: <Widget>[

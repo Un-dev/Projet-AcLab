@@ -44,7 +44,7 @@ class CardState extends State<CardStatelessWidget> {
         body:
         Container(
 
-          color: pullBackgroundColorTheme,
+          color: backgroundColorTheme,
           child: Column(
             children: [
               /* Stack(

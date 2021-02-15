@@ -31,16 +31,18 @@ void connectAndListen() {
     navigatorKey.currentState.pushNamed('/room',
         arguments: RoomArguments(data[1]["roomID"], data[1]["username"]));
   });
-  socket.on('nom du truc', (data) {
-    //TODO
+  socket.on('launch_game', (data) {
+    print(data);
+    //fetch films
+    //store films in a state
+    //redirect to poll
   });
-  socket.on(
-      'launch_game',
-      (data) => {
-            //fetch films
-            //store films in a state
-            //redirect to poll
-          });
+
+  socket.on('join_room', (data) {
+    navigatorKey.currentState.pushNamed('/room',
+        arguments: RoomArguments(data[1]["roomID"], data[1]["username"]));
+  });
+
   socket.onDisconnect((_) => print('disconnect'));
 }
 
