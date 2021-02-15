@@ -43,7 +43,7 @@ class _CreateRoomFormState extends State<CreateRoomForm> {
                     borderSide: BorderSide(color: Colors.white),
                     borderRadius: BorderRadius.circular(10.0),
                   )),
-              keyboardType: TextInputType.number,
+              keyboardType: TextInputType.name,
             ),
             RaisedButton(
                 color: Color.fromRGBO(229, 10, 20, 1.0),
