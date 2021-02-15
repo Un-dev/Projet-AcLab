@@ -33,7 +33,14 @@ void connectAndListen() {
   });
   socket.on('nom du truc', (data) {
     //TODO
-  })
+  });
+  socket.on(
+      'launch_game',
+      (data) => {
+            //fetch films
+            //store films in a state
+            //redirect to poll
+          });
   socket.onDisconnect((_) => print('disconnect'));
 }
 
