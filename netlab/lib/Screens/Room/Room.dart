@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import 'package:netlab/actions/ioSocket.dart';
 import 'package:netlab/theme.dart';
 import 'package:netlab/utils/UserItem.dart';
 import 'package:netlab/utils/customButton.dart';
@@ -39,7 +41,12 @@ class _RoomState extends State<Room> {
     for (var i = 0; i < users.length; i++) {
       res.add(UserItem(username: users[i]));
     }
-    res.add(CustomButton(label: 'start', onPressed: () {}, buttonColor: 'red'));
+    res.add(CustomButton(
+        label: 'start',
+        onPressed: () {
+          socket.emit('launch_game');
+        },
+        buttonColor: 'red'));
     return res;
   }
 }
