@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:netlab/theme.dart';
 import 'package:netlab/utils/grade.dart';
 
-
-Widget customCard(cTextWidth, cardImg,movieTitleText, movieDesciptionText) {
+Widget customCard(
+    cTextWidth, cardImg, movieTitleText, movieDesciptionText, stars) {
   return Card(
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(10.0),
@@ -16,30 +16,39 @@ Widget customCard(cTextWidth, cardImg,movieTitleText, movieDesciptionText) {
       children: <Widget>[
         ClipRRect(
             borderRadius: cardPollBorderRadius(),
-            child:
-            Container(
+            child: Container(
               decoration: BoxDecoration(
                 border: Border(
-                    bottom: BorderSide(color: colorBorderContainerImg, width: borderSideContainerImg,)),
+                    bottom: BorderSide(
+                  color: colorBorderContainerImg,
+                  width: borderSideContainerImg,
+                )),
               ),
               padding: mEdgeInsets(0.0, 0.0, 0.0, 0.0),
               child: SizedBox.fromSize(
                 size: pollImgSize(),
-                child:Image.network(
+                child: Image.network(
                   cardImg,
-                  fit:BoxFit.fill,
+                  fit: BoxFit.fill,
                 ),
               ),
             )),
         ListTile(
-          title: Text(movieTitleText, style: titleCardStyle(),textAlign: TextAlign.center),
+          title: Text(movieTitleText,
+              style: titleCardStyle(), textAlign: TextAlign.center),
           //subtitle: (),
         ),
-        grade(3),
+        grade(stars),
         Container(
           padding: mEdgeInsets(0.0, 0.0, 0.0, 20.0),
           width: cTextWidth,
-          child: Text(movieDesciptionText,textAlign: TextAlign.center,style: TextStyle(color: Colors.white,fontSize: 15,),
+          child: Text(
+            movieDesciptionText,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 15,
+            ),
             maxLines: 10,
             overflow: TextOverflow.ellipsis,
           ),
