@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:netlab/actions/ioSocket.dart';
 import 'package:netlab/utils/customButton.dart';
 import 'package:netlab/theme.dart';
+import 'package:netlab/utils/customTextField.dart';
 
 class CreateRoom extends StatelessWidget {
   static const String _title = 'Create Room';
@@ -30,23 +31,7 @@ class _CreateRoomFormState extends State<CreateRoomForm> {
         padding: EdgeInsets.all(15.0),
         child: Column(
           children: <Widget>[
-            TextField(
-              controller: codeController,
-              decoration: InputDecoration(
-                  hintText: 'Username',
-                  labelStyle: textStyle,
-                  filled: true,
-                  fillColor: Color.fromRGBO(91, 101, 129, 1.0),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white),
-                    borderRadius: BorderRadius.circular(25.7),
-                  ),
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white),
-                    borderRadius: BorderRadius.circular(10.0),
-                  )),
-              keyboardType: TextInputType.name,
-            ),
+            textfieldWidget(textStyle,codeController,TextInputType.name,'Username'),
             RaisedButton(
                 color: Color.fromRGBO(229, 10, 20, 1.0),
                 textColor: Theme.of(context).primaryColorLight,
