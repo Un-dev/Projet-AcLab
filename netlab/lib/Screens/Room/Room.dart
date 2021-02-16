@@ -42,12 +42,12 @@ class _RoomState extends State<Room> {
       res.add(UserItem(username: users[i]));
     }
     res.add(CustomButton(
-        label: 'start',
-        onPressed: () {
-          socket.emit('launch_game');
-        },
-        buttonColor: 'red',
-        ));
+      label: 'start',
+      onPressed: () {
+        socket.emit('launch_game');
+      },
+      buttonColor: 'red',
+    ));
     return res;
   }
 }

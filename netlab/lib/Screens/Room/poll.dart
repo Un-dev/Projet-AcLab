@@ -5,9 +5,19 @@ import 'package:netlab/theme.dart';
 import 'package:netlab/utils/roundButton.dart';
 import 'package:netlab/utils/customCard.dart';
 
-class Poll extends StatelessWidget {
-  final String _title = 'Vote';
+class Poll extends StatefulWidget {
+  final List<Movie> movies;
 
+  Poll({this.movies});
+
+  @override
+  State<StatefulWidget> createState() => _PollState();
+}
+
+class _PollState extends State<Poll> {
+  _PollState();
+
+  final String _title = 'Vote';
   final Movie movie = new Movie(
       'Star Wars',
       'https://cdn.pixabay.com/photo/2020/12/23/08/00/bow-lake-5854210__340.jpg',
@@ -16,7 +26,6 @@ class Poll extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const PrimaryColor = const Color(0xFF151026);
     return Scaffold(
       appBar: AppBar(
         title: Text(_title),
