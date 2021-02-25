@@ -22,7 +22,6 @@ If there's not a match the process would continue.
 
 * [Spring-Boot](https://spring.io/projects/spring-boot) for the backend API
 * [Flutter](https://flutter.dev/) for the frontend
-* [MongoDB](https://www.mongodb.com) for the data base
 * [Docker](https://www.docker.com) for the DevOps
 * [AndroidStudio](https://developer.android.com/studio) for the emulation
 
@@ -36,13 +35,6 @@ We've chosen Flutter as our frontend framework because it's designed for fast de
 
 Spring boot is a Java framework, as we already all know a little bit of Java, plus we have a course about at the University, using it in this project is a great opportunity to train our skills on this framework. Also there are lots of libraries that could be useful.
 Furthermore, Java is statically-typed (type-safety) and has a good support for multi-threading. The framework also promote a long-term support and maintabillity.
-
-#### MongoDB
-MongoDB is an open-source document database built on a scale-out architecture.
-We chose MongoDB as the database for this project because it has a worldwide community of developers and consultants, so it is easy to get help, its document data model is a powerful way to store and retrieve data that allows developers to move forward quickly.
-The technology is stable and durable, with a lifespan of over 10 years, and is frequently updated, such as version 4.2.0 released in August 2019.
-Although it is licensed under SSPL for the servers and tools, and under Apache for the drivers, it is free to use.
-It also depends on NoSQL, but it is not difficult to understand if we have some knowledge of SQL. Moreover, MongoDB supports hybrid and multi-cloud applications.
 
 #### Docker
 
